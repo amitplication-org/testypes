@@ -24,7 +24,7 @@ class OrderUpdateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Int, {
     nullable: true,
   })
   quantity?: number | null;
@@ -35,7 +35,7 @@ class OrderUpdateInput {
   })
   @IsNumber()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Float, {
     nullable: true,
   })
   discount?: number | null;
@@ -46,7 +46,7 @@ class OrderUpdateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Int, {
     nullable: true,
   })
   totalPrice?: number | null;

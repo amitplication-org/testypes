@@ -97,7 +97,7 @@ class Address {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Int, {
     nullable: true,
   })
   zip!: number | null;

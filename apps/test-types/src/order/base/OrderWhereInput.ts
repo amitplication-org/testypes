@@ -14,8 +14,9 @@ import { ApiProperty } from "@nestjs/swagger";
 import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
-import { IntNullableFilter } from "../../util/IntNullableFilter";
+import { BigIntNullableFilter } from "../../util/BigIntNullableFilter";
 import { FloatNullableFilter } from "../../util/FloatNullableFilter";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
 import { CustomerWhereUniqueInput } from "../../customer/base/CustomerWhereUniqueInput";
 import { ProductWhereUniqueInput } from "../../product/base/ProductWhereUniqueInput";
 
@@ -34,14 +35,14 @@ class OrderWhereInput {
 
   @ApiProperty({
     required: false,
-    type: IntNullableFilter,
+    type: BigIntNullableFilter,
   })
-  @Type(() => IntNullableFilter)
+  @Type(() => BigIntNullableFilter)
   @IsOptional()
-  @Field(() => IntNullableFilter, {
+  @Field(() => BigIntNullableFilter, {
     nullable: true,
   })
-  quantity?: IntNullableFilter;
+  quantity?: BigIntNullableFilter;
 
   @ApiProperty({
     required: false,
