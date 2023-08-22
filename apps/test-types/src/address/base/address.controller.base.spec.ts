@@ -26,7 +26,6 @@ const CREATE_INPUT = {
   address_2: "exampleAddress_2",
   city: "exampleCity",
   state: "exampleState",
-  zip: 42,
 };
 const CREATE_RESULT = {
   id: "exampleId",
@@ -36,7 +35,6 @@ const CREATE_RESULT = {
   address_2: "exampleAddress_2",
   city: "exampleCity",
   state: "exampleState",
-  zip: 42,
 };
 const FIND_MANY_RESULT = [
   {
@@ -47,7 +45,6 @@ const FIND_MANY_RESULT = [
     address_2: "exampleAddress_2",
     city: "exampleCity",
     state: "exampleState",
-    zip: 42,
   },
 ];
 const FIND_ONE_RESULT = {
@@ -58,7 +55,6 @@ const FIND_ONE_RESULT = {
   address_2: "exampleAddress_2",
   city: "exampleCity",
   state: "exampleState",
-  zip: 42,
 };
 
 const service = {
