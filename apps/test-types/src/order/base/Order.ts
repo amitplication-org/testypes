@@ -58,7 +58,7 @@ class Order {
   @Field(() => Int, {
     nullable: true,
   })
-  quantity!: number | null;
+  quantity!: bigint | null;
 
   @ApiProperty({
     required: false,
