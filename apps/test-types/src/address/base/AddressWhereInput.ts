@@ -15,7 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
-import { IntNullableFilter } from "../../util/IntNullableFilter";
+import { BigIntNullableFilter } from "../../util/BigIntNullableFilter";
 import { CustomerListRelationFilter } from "../../customer/base/CustomerListRelationFilter";
 
 @InputType()
@@ -77,14 +77,14 @@ class AddressWhereInput {
 
   @ApiProperty({
     required: false,
-    type: IntNullableFilter,
+    type: BigIntNullableFilter,
   })
-  @Type(() => IntNullableFilter)
+  @Type(() => BigIntNullableFilter)
   @IsOptional()
-  @Field(() => IntNullableFilter, {
+  @Field(() => BigIntNullableFilter, {
     nullable: true,
   })
-  zip?: IntNullableFilter;
+  zip?: BigIntNullableFilter;
 
   @ApiProperty({
     required: false,
