@@ -52,7 +52,7 @@ model Address {
   address_2 String?
   city      String?
   state     String?
-  zip       BigInt?
+  zip       Int?
   customers Customer[]
 }
 
