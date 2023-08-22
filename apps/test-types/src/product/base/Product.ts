@@ -15,7 +15,7 @@ import {
   IsString,
   IsDate,
   IsOptional,
-  IsDecimal,
+  IsNumber,
   ValidateNested,
 } from "class-validator";
 import { Type } from "class-transformer";
@@ -61,11 +61,11 @@ class Product {
 
   @ApiProperty({
     required: false,
-    type: Decimal,
+    type: Number,
   })
-  @IsDecimal()
+  @IsNumber()
   @IsOptional()
-  @Field(() => Decimal, {
+  @Field(() => Float, {
     nullable: true,
   })
   itemPrice!: Decimal | null;

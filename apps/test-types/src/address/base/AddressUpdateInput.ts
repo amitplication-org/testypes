@@ -67,7 +67,7 @@ class AddressUpdateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => Int, {
     nullable: true,
   })
   zip?: number | null;

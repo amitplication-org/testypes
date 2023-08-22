@@ -14,7 +14,7 @@ import { ApiProperty } from "@nestjs/swagger";
 import {
   IsString,
   IsOptional,
-  IsDecimal,
+  IsNumber,
   ValidateNested,
 } from "class-validator";
 import { Decimal } from "decimal.js";
@@ -36,11 +36,11 @@ class ProductUpdateInput {
 
   @ApiProperty({
     required: false,
-    type: Decimal,
+    type: Number,
   })
-  @IsDecimal()
+  @IsNumber()
   @IsOptional()
-  @Field(() => Decimal, {
+  @Field(() => Float, {
     nullable: true,
   })
   itemPrice?: Decimal | null;
