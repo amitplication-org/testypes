@@ -9,9 +9,10 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { InputType, Field, Int, Float } from "@nestjs/graphql";
+import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsInt, IsOptional, IsNumber, ValidateNested } from "class-validator";
+import { GraphQLBigInt } from "../../util/GraphQLBigInt";
 import { CustomerWhereUniqueInput } from "../../customer/base/CustomerWhereUniqueInput";
 import { Type } from "class-transformer";
 import { ProductWhereUniqueInput } from "../../product/base/ProductWhereUniqueInput";
@@ -24,7 +25,7 @@ class OrderCreateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Int, {
+  @Field(() => GraphQLBigInt, {
     nullable: true,
   })
   quantity?: bigint | null;
@@ -35,7 +36,7 @@ class OrderCreateInput {
   })
   @IsNumber()
   @IsOptional()
-  @Field(() => Float, {
+  @Field(() => Number, {
     nullable: true,
   })
   discount?: number | null;
@@ -46,7 +47,7 @@ class OrderCreateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Int, {
+  @Field(() => Number, {
     nullable: true,
   })
   totalPrice?: number | null;

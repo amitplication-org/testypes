@@ -1,10 +1,15 @@
 import { ValidationPipe } from "@nestjs/common";
 import { HttpAdapterHost, NestFactory } from "@nestjs/core";
 import { OpenAPIObject, SwaggerModule } from "@nestjs/swagger";
+// @ts-ignore
+// eslint-disable-next-line
 import { HttpExceptionFilter } from "./filters/HttpExceptions.filter";
 // @ts-ignore
 // eslint-disable-next-line
 import { AppModule } from "./app.module";
+// @ts-ignore
+// eslint-disable-next-line
+import { connectMicroservices } from "./connectMicroservices";
 import {
   swaggerPath,
   swaggerDocumentOptions,
@@ -26,6 +31,13 @@ async function main() {
     })
   );
 
+  //This fix is based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#use_within_json
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  BigInt.prototype.toJSON = function () {
+    return this.toString();
+  };
+
   const document = SwaggerModule.createDocument(app, swaggerDocumentOptions);
 
   /** check if there is Public decorator for each path (action) and its method (findMany / findOne) on each controller */
@@ -39,6 +51,9 @@ async function main() {
       }
     });
   });
+
+  await connectMicroservices(app);
+  await app.startAllMicroservices();
 
   SwaggerModule.setup(swaggerPath, app, document, swaggerSetupOptions);
 
