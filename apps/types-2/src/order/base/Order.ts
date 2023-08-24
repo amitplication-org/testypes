@@ -20,6 +20,7 @@ import {
   ValidateNested,
 } from "class-validator";
 import { Type } from "class-transformer";
+import { GraphQLBigInt } from "../../util/GraphQLBigInt";
 import { Customer } from "../../customer/base/Customer";
 import { Product } from "../../product/base/Product";
 
@@ -55,10 +56,10 @@ class Order {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => GraphQLBigInt, {
     nullable: true,
   })
-  quantity!: number | null;
+  quantity!: bigint | null;
 
   @ApiProperty({
     required: false,

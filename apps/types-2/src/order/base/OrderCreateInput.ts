@@ -12,6 +12,7 @@ https://docs.amplication.com/how-to/custom-code
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsInt, IsOptional, IsNumber, ValidateNested } from "class-validator";
+import { GraphQLBigInt } from "../../util/GraphQLBigInt";
 import { CustomerWhereUniqueInput } from "../../customer/base/CustomerWhereUniqueInput";
 import { Type } from "class-transformer";
 import { ProductWhereUniqueInput } from "../../product/base/ProductWhereUniqueInput";
@@ -24,10 +25,10 @@ class OrderCreateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Number, {
+  @Field(() => GraphQLBigInt, {
     nullable: true,
   })
-  quantity?: number | null;
+  quantity?: bigint | null;
 
   @ApiProperty({
     required: false,
