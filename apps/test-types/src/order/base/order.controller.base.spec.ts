@@ -22,6 +22,7 @@ const CREATE_INPUT = {
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  quantity: 42242424,
   discount: 42.42,
   totalPrice: 42,
 };
@@ -29,6 +30,7 @@ const CREATE_RESULT = {
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  quantity: 42242424,
   discount: 42.42,
   totalPrice: 42,
 };
@@ -37,6 +39,7 @@ const FIND_MANY_RESULT = [
     id: "exampleId",
     createdAt: new Date(),
     updatedAt: new Date(),
+    quantity: 42242424,
     discount: 42.42,
     totalPrice: 42,
   },
@@ -45,6 +48,7 @@ const FIND_ONE_RESULT = {
   id: "exampleId",
   createdAt: new Date(),
   updatedAt: new Date(),
+  quantity: 42242424,
   discount: 42.42,
   totalPrice: 42,
 };

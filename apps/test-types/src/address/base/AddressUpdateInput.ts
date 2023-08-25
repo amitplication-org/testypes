@@ -9,7 +9,7 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { InputType, Field, Int } from "@nestjs/graphql";
+import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsOptional, IsInt, ValidateNested } from "class-validator";
 import { CustomerUpdateManyWithoutAddressesInput } from "./CustomerUpdateManyWithoutAddressesInput";
@@ -67,7 +67,7 @@ class AddressUpdateInput {
   })
   @IsInt()
   @IsOptional()
-  @Field(() => Int, {
+  @Field(() => Number, {
     nullable: true,
   })
   zip?: number | null;
